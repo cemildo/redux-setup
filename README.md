@@ -43,3 +43,13 @@ Before running the tests make sure you are serving the app via `ng serve`.
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 # redux-setup
+
+## Redux help
+Component triggers 
+`
+constructor(public appFacede: AppFacade) {
+    this.appFacede.loadAll();
+}
+`
+which will register selectors for store changes and at the same time trigger an action to load the data.
+It will first hit an action(defined in dispatch function) and there action type will be set then since the action type is known it is going to hit reducer. Reducer tries to get information from store if store does not have the information then related effects will be called from store (it knows realted effect because of the action type) and it will try to get data form services. After data is return in effects it will return another action which will be captured by actions then thru reducer store will be updated. Since selectors are ready from the begining and listining to changes from store, they will be updated and the data will be given to component.
