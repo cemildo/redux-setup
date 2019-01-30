@@ -7,5 +7,21 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "app-client": {
+      "tags": []
+    },
+    "app-client-e2e": {
+      "tags": []
+    },
+    "component-kit": {
+      "tags": []
+    },
+    "client": {
+      "tags": []
+    },
+    "client-e2e": {
+      "tags": []
+    }
+  }
 }
